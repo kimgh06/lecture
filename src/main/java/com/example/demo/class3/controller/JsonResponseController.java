@@ -14,7 +14,7 @@ public class JsonResponseController {
     /**
      * {@link JsonResponseController#getMyJson()} API의 Response Body 반환 객체이다.
      */
-    static class GiveMeJson {
+     static class GiveMeJson {
         private String content;
 
         /**
