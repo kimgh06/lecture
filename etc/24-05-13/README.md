@@ -14,5 +14,8 @@
 [레퍼런스 북: 코딩 호러의 이펙티브 프로그래밍](https://m.yes24.com/Goods/Detail/8611802)
 
 ## 팀 : 주제 소개
-* [팀 바나나](./banana-redis.md)
-* [팀 애플](./apple-opensource-licence.md)
+
+* 팀 바나나
+    * [1차시 - Redis](./banana-redis.md)
+* 팀 애플
+    * [1차시 - 오픈소스 라이센스](./apple-opensource-licence.md)
