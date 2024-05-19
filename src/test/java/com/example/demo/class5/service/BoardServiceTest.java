@@ -1,7 +1,6 @@
 package com.example.demo.class5.service;
 
 import com.example.demo.class5.domain.Board;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +14,6 @@ class BoardServiceTest {
 
     @Autowired
     private BoardService boardService;
-
 
     @Test
     void getOneOfBoard() {
