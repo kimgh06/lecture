@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class CacheService {
+public class LockService {
     private static final Map<String, String> CACHE_MAP = new HashMap<>();
 
     public boolean acquire(final String key, final String value) {
@@ -20,7 +20,7 @@ public class CacheService {
         try {
             CACHE_MAP.put(key, value);
         } catch (Exception e) {
-            throw new IllegalStateException("lock 실패");
+            throw new IllegalStateException("lock 획득에 실패했습니다.", e);
         }
     }
 }

@@ -11,13 +11,13 @@ public class DefenceConcurrency {
     private static final String WHEN_SUCCESS = "success";
     private static final String WHEN_FAIL = "fail";
 
-    private final CacheService cacheService;
+    private final LockService lockService;
 
     public String doSomething(String toBeProtect) {
         String hereKey = "requestPrimary";
 
-        if (cacheService.acquire(hereKey, toBeProtect)) {
-            cacheService.lock(hereKey, toBeProtect);
+        if (lockService.acquire(hereKey, toBeProtect)) {
+            lockService.lock(hereKey, toBeProtect);
             log.info("락 획득, 필요한 처리 함.");
             return WHEN_SUCCESS;
         } else {
