@@ -10,7 +10,11 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class BoardRepositoryImpl implements BoardRepository {
 
+<<<<<<< HEAD
     private NamedParameterJdbcTemplate jdbcTemplate;
+=======
+    private final NamedParameterJdbcTemplate jdbcTemplate;
+>>>>>>> 918e84d3b09216725a7ca6f3547a84a405cfadf1
 
     @Override
     public Board findById(long id) {
