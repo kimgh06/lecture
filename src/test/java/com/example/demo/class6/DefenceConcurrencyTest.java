@@ -9,16 +9,26 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest
 @ActiveProfiles("dev")
-class DefenceConcurencyTest {
+class defenceConcurrencyTest {
+    private final static String REQUEST_BY_A = "orderRequestByA";
 
     @Autowired
     private DefenceConcurrency defenceConcurrency;
 
     @Test
     void testConcurrency() {
-        String requestId = "orderRequestByA";
-        defenceConcurrency.doSomething(requestId);
+        // Given
+        doRequest(REQUEST_BY_A);
+        String expected = "fail";
 
-        assertThat(defenceConcurrency.doSomething(requestId)).isEqualTo("fail");
+        // When
+        String actual = doRequest(REQUEST_BY_A);
+
+        // Then
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    private String doRequest(String requestId) {
+        return defenceConcurrency.doSomething(requestId);
     }
 }
